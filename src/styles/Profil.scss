@@ -1,0 +1,37 @@
+@import 'utils/variables';
+@import 'base/base';
+
+.profil__cont__success{
+  margin-top: 20px;
+  width: 500px;
+  height: 700px;
+  margin-right: 20px;
+  background-color: $background-color-elt;
+}
+
+.main__info{
+  font-size: $font-size-success;
+  line-height: $line-height-success;
+  margin-top: 20px;
+  margin-left: 10px;
+  height: 300px;
+  width: 400px;
+  background-color: $background-color-elt;
+}
+
+.my__courses{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 800px;
+  height: 700px;
+  background-color: $background-color-elt;
+  margin-top: 20px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+.cont__profil{
+  display: flex;
+  justify-content: space-around;
+}

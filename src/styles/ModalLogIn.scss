@@ -1,0 +1,21 @@
+@import 'utils/variables';
+
+.modal__back{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  background-color: $background-color-modal;
+  opacity: 0.9;
+  top: 0px;
+}
+
+.modal__cont{
+  width: 200px;
+  height: 200px;
+  background-color: $background-color-modal;
+  opacity: 1;
+}

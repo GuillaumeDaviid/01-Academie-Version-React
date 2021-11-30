@@ -1,0 +1,73 @@
+@import 'utils/variables';
+
+.msg__update{
+  display: flex;
+  justify-content: center;
+}
+
+.current{
+  margin-top : 20px;
+}
+
+.update__pass{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.input__update{
+  margin-left: 5px;
+  margin-top: 20px;
+}
+
+.update__email{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.update__pseudo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.form__update__pseudo{
+  display: flex;
+  flex-direction: column;
+}
+
+.cont__Param{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 25px;
+  background-color: $background-color-elt;
+  margin-right: 25px;
+  margin-top: 25px;
+}
+
+.title__update{
+  color: #FFAEAE;
+}
+
+.btn__update{
+  cursor: pointer;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  color: $color-secondary;
+  background-color: $background-color-primary;
+  width: 200px;
+  height: 50px;
+  border: 1px solid;
+  border-radius: .50em;
+  transition: color .15s ease-in-out;
+  transition: background-color .15s ease-in-out;
+}
+
+.btn__update:hover{
+  color: $background-color-primary;
+  background-color: $color-secondary;
+}

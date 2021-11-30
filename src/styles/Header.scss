@@ -1,0 +1,134 @@
+@import 'utils/variables';
+
+#content{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  height : 70px;
+  overflow: hidden;
+}
+
+.img_header{
+  border-radius: 100%;
+  margin-right: 150px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.btn__login, .btn__signUp{
+  text-decoration: none;
+  background-color: $background-color-tertiary;
+  padding: 10px 30px;
+  color: white;
+  margin-right: 20px;
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  border : 1px white solid;
+  border-radius: 10px;
+  text-align: center;
+  transition: color .15s ease-in-out;
+  transition: background-color .15s ease-in-out;
+}
+
+.btn__login:hover, .btn__signUp:hover{
+  background-color: white;
+  color: black;
+}
+
+.logo{
+  margin-left: 150px;
+}
+
+header{
+  background-color: $background-color-tertiary;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 0px;
+}
+
+nav a:hover{
+    color:orange;
+    border-bottom: 2px solid $color-secondary;
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: white;
+    position: absolute;
+    width: 125px;
+}
+
+nav > ul li:hover .sous {
+    display: block;
+}
+
+.sous li{
+    margin-top: 10px;
+    height: 30px;
+    text-align: left;
+}
+
+.sous a{
+    padding: 10px;
+}
+
+.sous a:hover{
+    border-bottom: none;
+    background-color: RGBa(200,200,200,0.1);
+}
+
+.page_cou, .page_suc{
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: arial-label;
+  transition: color .15s ease-in-out;
+}
+
+.page_cou:hover, .page_suc:hover{
+  color: $color-secondary;
+}
+
+.page_cou{
+  margin-left: 10px;
+}
+
+.page_suc{
+  margin-right: 10px;
+}
+
+.btn{
+  margin-left: -100px;
+}
+
+.border{
+  border-left: 1px white solid;
+}
+
+.pages{
+  margin-right: 165px;
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.deroulant{
+  border-right: 20px;
+}

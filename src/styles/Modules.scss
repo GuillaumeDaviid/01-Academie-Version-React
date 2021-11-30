@@ -1,0 +1,55 @@
+@import 'utils/variables';
+
+.bloc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width : 500px;
+  height: 50px;
+  border : 1px white solid;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  transform: scale(1);
+  transition: transform 400ms;
+}
+
+.link__modules{
+  width : 500px;
+  height: 50px;
+}
+
+.bloc:hover{
+  transform: scale(1.10);
+  background-color: $background-color-hover;
+}
+
+.bloc__modules{
+  display: flex;
+  justify-content: center;
+}
+
+.title__modules{
+  margin-bottom: 20px;
+}
+
+.btn_return{
+  margin-left: 20px;
+  margin-top: 50px;
+  text-decoration: none;
+  color: $color-secondary;
+  width: 200px;
+  height : 50px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .25em;
+  transition: color .15s ease-in-out;
+  transition: background-color .15s ease-in-out;
+}
+
+.btn_return:hover{
+  color: $background-color-primary;
+  background-color: $color-secondary;
+}
