@@ -1,0 +1,31 @@
+@import 'utils/variables';
+@import 'base/base';
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: $font-family-main;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*::after::before{
+  box-sizing: border-box;
+}
+
+a{
+  color : $color-link;
+}
+
+html, body{
+  min-height: 100vh;
+}
+
+body {
+  padding-bottom: 50px;
+  color: white;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  background-color: $background-color-primary;
+}

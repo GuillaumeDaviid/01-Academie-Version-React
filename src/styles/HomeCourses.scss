@@ -1,0 +1,67 @@
+@import 'utils/variables';
+
+.courses {
+  cursor: pointer;
+    border : 1px solid white;
+    border-radius: 16px;
+    display: block ;
+    width : 400px;
+    height: 200px;
+    margin-top: 20px;
+    margin-right: 25px;
+    margin-left: 25px;
+    transform: scale(1);
+    transition: transform 400ms;
+    box-shadow: 0px 0px 0px 0px $color-shadow;
+}
+
+
+.link{
+  display: block;
+  width: 400px;
+  height: 200px;
+}
+
+.image{
+  border-radius: 16px;
+}
+
+#newCourses{
+  margin-bottom: 20px;
+}
+
+.courses:hover{
+  transform: scale(1.10);
+  box-shadow: 5px 5px 10px 5px $color-shadow-hover;
+}
+
+.title_home_page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height : 50px;
+  background-color: $color-secondary;
+  margin-bottom: 5px;
+  margin-top: 0px;
+  color: $color-primary;
+}
+
+.bloc_propos{
+  color:white;
+  width: 500px;
+}
+
+.bloc__content{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cont_dev{
+  margin-top: 20px;
+}
+
+#newCourses {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}

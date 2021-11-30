@@ -1,0 +1,34 @@
+@import 'utils/variables';
+@import 'base/base';
+
+.page__success{
+  display: flex;
+  justify-content: center;
+}
+
+.cont__success{
+  margin-top: 20px;
+  width: 1000px;
+  height: 800px;
+  margin-right: 20px;
+  background-color: $background-color-elt;
+}
+
+.title__success{
+  color: $color-secondary;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: solid 1px $color-secondary;
+}
+
+.success__info{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: $font-size-success;
+  line-height: $line-height-success;
+}
+
+.success__info:hover{
+  background-color: $background-color-hover;
+}
