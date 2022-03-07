@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
 # Informations 
 
 Axios, API REST, PHP, react-router-dom, SCSS
 
->>>>>>> 084d2c197e954a1d7d53240d413d1ec2693518fa
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
