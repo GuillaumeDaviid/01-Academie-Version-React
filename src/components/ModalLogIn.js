@@ -1,7 +1,6 @@
 import React,{useState, useCallback, useContext} from 'react'
 import {MyContext} from '../contexts/MyContext'
 import '../styles/ModalLogIn.scss'
-import Axios from 'axios'
 
 function ModalLogIn({ showModal, children }){
 
@@ -24,7 +23,6 @@ function ModalLogIn({ showModal, children }){
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(pseudo);
   }
 
   const onChangeValue = (e) => {
@@ -35,10 +33,8 @@ function ModalLogIn({ showModal, children }){
                 [e.target.name]:e.target.value
             }
         });
+        console.log(state);
     }
-    function refreshPage() {
-
-  }
 
   const submitForm = async (event) => {
         event.preventDefault();

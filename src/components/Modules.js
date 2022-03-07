@@ -23,7 +23,6 @@ function Modules({ getId, handleClickModules }){
 
   useEffect(()=>{
 Axios.get("http://localhost/01-academie/src/server/modules.php").then((data)=>{
-    console.log(data.data)
     setGetModules(data.data)
 });
 },[])
