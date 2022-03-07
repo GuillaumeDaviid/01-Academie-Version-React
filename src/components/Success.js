@@ -6,8 +6,8 @@ import Axios from 'axios'
 
 function Success() {
 
-  const {rootState,logoutUser} = useContext(MyContext);
-  const {isAuth,theUser,showLogin} = rootState;
+  const {rootState} = useContext(MyContext);
+  const {isAuth,theUser} = rootState;
 
   const [getSuccess, setGetSuccess] = useState([])
 

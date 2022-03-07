@@ -1,10 +1,10 @@
-import React,{useState, useCallback, useContext} from 'react'
+import React,{useState, useContext} from 'react'
 import {MyContext} from '../contexts/MyContext'
 import '../styles/ModalLogIn.scss'
 
 function ModalLogIn({ showModal, children }){
 
-  const {toggleNav,loginUser,isLoggedIn} = useContext(MyContext);
+  const {loginUser,isLoggedIn} = useContext(MyContext);
 
   const initialState = {
         userInfo:{
@@ -58,10 +58,6 @@ function ModalLogIn({ showModal, children }){
     if(state.successMsg){
         successMsg = <div className="success-msg">{state.successMsg}</div>;
     }
-
-    function refreshPage() {
-    window.location.reload(false);
-  }
 
 
 

@@ -4,7 +4,7 @@ import '../styles/ModalSignUp.scss'
 
 function ModalSignUp({ showModal, children }){
 
-  const {toggleNav,registerUser} = useContext(MyContext);
+  const {registerUser} = useContext(MyContext);
     const initialState = {
         userInfo:{
             name:'',

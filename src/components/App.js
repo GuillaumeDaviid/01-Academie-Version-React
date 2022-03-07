@@ -1,4 +1,3 @@
-import logo from '../logo.svg';
 import Header from './Header.js'
 import Footer from './Footer.js'
 import HomeCourses from './HomeCourses.js'
@@ -10,7 +9,7 @@ import Profil from './Profil.js'
 import Parameters from './Parameters.js'
 import '../styles/App.scss';
 import React,{useState, useCallback} from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
 

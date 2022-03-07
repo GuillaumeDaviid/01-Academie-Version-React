@@ -2,18 +2,16 @@ import '../styles/Profil.scss'
 import {MyContext} from '../contexts/MyContext'
 import React,{useState,useEffect, useContext} from 'react'
 import HomeCourses from './HomeCourses.js'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Axios from 'axios'
 
 
 function Profil({ getId, handleClick }) {
 
-  const {rootState,logoutUser} = useContext(MyContext);
+  const {rootState} = useContext(MyContext);
   const {isAuth,theUser,showLogin} = rootState;
 
   const [getSuccess, setGetSuccess] = useState([]);
-
-  const [getEvent, setGetEvent] = useState([]);
 
   const [getList,setGetList] = useState([]);
 
