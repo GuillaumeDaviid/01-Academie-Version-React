@@ -17,14 +17,6 @@ function ModalLogIn({ showModal, children }){
 
   const [state,setState] = useState(initialState);
 
-  const[pseudo, setPseudo] = useState("");
-  const[password, setPassword] = useState("");
-
-
-  const handleSubmit = e => {
-    e.preventDefault();
-  }
-
   const onChangeValue = (e) => {
         setState({
             ...state,
