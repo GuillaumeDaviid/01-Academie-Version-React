@@ -1,14 +1,13 @@
 import '../styles/Parameters.scss'
 import {MyContext} from '../contexts/MyContext'
 import HomeCourses from './HomeCourses.js'
-import React,{useState,useEffect, useContext} from 'react'
+import React,{useState, useContext} from 'react'
 
 function Parameters (){
 
-  const {rootState,logoutUser,updateUser,updateEmailUser,updatePasswordUser} = useContext(MyContext);
-  const {isAuth,theUser,showLogin} = rootState;
+  const {rootState,updateUser,updateEmailUser,updatePasswordUser} = useContext(MyContext);
+  const {isAuth,theUser} = rootState;
 
-  const {toggleNav,registerUser} = useContext(MyContext);
     const initialState = {
         userInfo:{
             name:'',

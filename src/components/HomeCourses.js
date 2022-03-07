@@ -1,8 +1,7 @@
 import '../styles/HomeCourses.scss';
 import React,{useState,useEffect} from 'react'
-import Modules from './Modules.js'
 import Axios from 'axios'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function HomeCourses({ getId, handleClick }){

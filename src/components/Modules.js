@@ -1,18 +1,16 @@
-import {MyContext} from '../contexts/MyContext'
-import React,{useState,useEffect, useContext} from 'react'
-import Axios from 'axios'
-import HomeCourses from './HomeCourses.js'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { useParams, useHistory } from 'react-router-dom';
+import {MyContext} from '../contexts/MyContext';
+import React,{useState,useEffect, useContext} from 'react';
+import Axios from 'axios';
+import { Link } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import '../styles/Modules.scss';
 
 
 function Modules({ getId, handleClickModules }){
 
-  const history = useHistory();
 
-  const {rootState,logoutUser} = useContext(MyContext);
-  const {isAuth,theUser,showLogin} = rootState;
+  const {rootState} = useContext(MyContext);
+  const {isAuth,theUser} = rootState;
 
   let { id } = useParams();
 
@@ -23,7 +21,6 @@ function Modules({ getId, handleClickModules }){
 
   useEffect(()=>{
 Axios.get("http://localhost/01-academie/src/server/modules.php").then((data)=>{
-    console.log(data.data)
     setGetModules(data.data)
 });
 },[])
@@ -32,8 +29,8 @@ Axios.get("http://localhost/01-academie/src/server/modules.php").then((data)=>{
 
 const listModules = getModules.map((getModules) =>
 <div className="bloc__modules">
-{(isAuth) ? getModules.courses_id == id ?
-  (<div style={(theUser.last_module_html > parseInt(getModules.position) && getModules.courses_id == 1 || theUser.last_module_css > parseInt(getModules.position) && getModules.courses_id == 2 ||
+{(isAuth) ? getModules.courses_id === id ?
+  (<div style={(theUser.last_module_html > parseInt(getModules.position) && getModules.courses_id === 1 || theUser.last_module_css > parseInt(getModules.position) && getModules.courses_id == 2 ||
   theUser.last_module_php > parseInt(getModules.position) && getModules.courses_id == 3 || theUser.last_module_js > parseInt(getModules.position) && getModules.courses_id == 4 ||
 theUser.last_module_sql > parseInt(getModules.position) && getModules.courses_id == 5 || theUser.last_module_py > parseInt(getModules.position) && getModules.courses_id == 6) ? {borderColor: "rgb(253, 185, 80)"} : (theUser.last_module_html == getModules.position && getModules.courses_id == 1 ||
 theUser.last_module_css == getModules.position && getModules.courses_id == 2 || theUser.last_module_php == getModules.position && getModules.courses_id == 3 ||

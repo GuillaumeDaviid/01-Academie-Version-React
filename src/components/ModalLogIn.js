@@ -1,11 +1,10 @@
-import React,{useState, useCallback, useContext} from 'react'
+import React,{useState, useContext} from 'react'
 import {MyContext} from '../contexts/MyContext'
 import '../styles/ModalLogIn.scss'
-import Axios from 'axios'
 
 function ModalLogIn({ showModal, children }){
 
-  const {toggleNav,loginUser,isLoggedIn} = useContext(MyContext);
+  const {loginUser,isLoggedIn} = useContext(MyContext);
 
   const initialState = {
         userInfo:{
@@ -18,15 +17,6 @@ function ModalLogIn({ showModal, children }){
 
   const [state,setState] = useState(initialState);
 
-  const[pseudo, setPseudo] = useState("");
-  const[password, setPassword] = useState("");
-
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log(pseudo);
-  }
-
   const onChangeValue = (e) => {
         setState({
             ...state,
@@ -35,10 +25,8 @@ function ModalLogIn({ showModal, children }){
                 [e.target.name]:e.target.value
             }
         });
+        console.log(state);
     }
-    function refreshPage() {
-
-  }
 
   const submitForm = async (event) => {
         event.preventDefault();
@@ -70,10 +58,6 @@ function ModalLogIn({ showModal, children }){
     if(state.successMsg){
         successMsg = <div className="success-msg">{state.successMsg}</div>;
     }
-
-    function refreshPage() {
-    window.location.reload(false);
-  }
 
 
 

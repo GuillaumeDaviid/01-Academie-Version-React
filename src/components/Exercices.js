@@ -2,14 +2,14 @@ import '../styles/Exercices.scss';
 import React, {useContext,useEffect,useState} from 'react'
 import {MyContext} from '../contexts/MyContext'
 import Axios from 'axios'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { useParams, useHistory } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 
 function Exercices ({getIdModules, getCoursesIdModules, getPositionModules, getExpModules}){
 
-  const {rootState,logoutUser,updateModules} = useContext(MyContext);
-  const {isAuth,theUser,showLogin} = rootState;
+  const {rootState,updateModules} = useContext(MyContext);
+  const {theUser} = rootState;
 
   let { id } = useParams();
 

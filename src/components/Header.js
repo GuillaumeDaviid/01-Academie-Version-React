@@ -3,13 +3,13 @@ import logo from '../images/logo.png'
 import ModalLogIn from './ModalLogIn.js'
 import ModalSignUp from './ModalSignUp.js'
 import {MyContext} from '../contexts/MyContext'
-import React,{useState,useEffect, useContext} from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import React,{useState, useContext} from 'react'
+import { Link } from "react-router-dom";
 
 
 function Header() {
   const {rootState,logoutUser} = useContext(MyContext);
-  const {isAuth,theUser,showLogin} = rootState;
+  const {isAuth,theUser} = rootState;
 
   const [openModal, setOpenModal] = useState(false)
 
@@ -40,7 +40,7 @@ function Header() {
     <header>
     <div id="content">
 <div className="lg">
-    <Link to="/" className="logo"><img src={logo}/></Link>
+    <Link to="/" className="logo"><img src={logo} alt="logo"/></Link>
 </div>
 
 <div className='pages'>
@@ -52,7 +52,7 @@ function Header() {
 
 {(isAuth) ? <div><nav>
 <ul>
-   <li className=''><a className="img_header">{theUser.pseudo}</a>
+   <li className=''><a href="http://localhost:3000/"className="img_header">{theUser.pseudo}</a>
         <ul class="sous">
             <li><Link to="Profil" class='a'>Profil</Link></li>
             <li><Link to="Parameters" class='a'>Paramétres</Link></li>
