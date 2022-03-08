@@ -5,6 +5,7 @@ import Modules from './Modules.js'
 import Exercices from './Exercices.js'
 import Success from './Success.js'
 import MyContextProvider from '../contexts/MyContext';
+import { ModulesProvider } from '../contexts/ModulesContext.jsx'
 import Profil from './Profil.js'
 import Parameters from './Parameters.js'
 import '../styles/App.scss';
@@ -14,18 +15,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
 
   const [getId, setGetId] = useState("");
-
-  const [getIdModules, setGetIdModules] = useState("");
-  const [getCoursesIdModules, setGetCoursesIdModules] = useState("");
-  const [getPositionModules, setGetPositionModules] = useState("");
-  const [getExpModules, setGetExpModules] = useState("");
-
-  const handleClickModules = useCallback((id, courses, position, exp) => {
-    setGetIdModules(id)
-    setGetCoursesIdModules(courses)
-    setGetPositionModules(position)
-    setGetExpModules(exp)
-  }, [])
 
   const handleClick = useCallback((id) => {
     setGetId(id)
@@ -40,35 +29,39 @@ function App() {
     </MyContextProvider>
 
     <Switch>
-
     <Route exact path='/'>
       <HomeCourses getId={getId} handleClick={handleClick}/>
       </Route>
+      
 
+      <ModulesProvider>
       <Route path="/Modules id=:id">
-      <Modules getId={getId} handleClickModules={handleClickModules} />
+      <Modules getId={getId} />
       </Route>
-
+      
       <Route path="/Exercices id=:id">
-      <Exercices getIdModules={getIdModules} getCoursesIdModules={getCoursesIdModules} getPositionModules={getPositionModules} getExpModules={getExpModules}/>
+      <Exercices />
       </Route>
+      
 
       <Route exact path="/Success">
       <Success />
       </Route>
 
       <Route exact path='/Profil'>
-        <Profil getId={getId} handleClick={handleClick}/>
-        </Route>
+      <Profil getId={getId} handleClick={handleClick}/>
+      </Route>
 
-        <Route exact path='/Parameters'>
-          <Parameters/>
-          </Route>
+      <Route exact path='/Parameters'>
+      <Parameters/>
+      </Route>
+      </ModulesProvider>
 
 
 </Switch>
 <Footer />
     </div>
+    
     </Router>
   );
 }
