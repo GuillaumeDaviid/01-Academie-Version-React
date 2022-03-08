@@ -40,18 +40,20 @@ function App() {
     </MyContextProvider>
 
     <Switch>
-
+    
     <Route exact path='/'>
       <HomeCourses getId={getId} handleClick={handleClick}/>
       </Route>
 
       <Route path="/Modules id=:id">
-      <Modules getId={getId} handleClickModules={handleClickModules} />
+      <Modules getId={getId} handleClickModules={handleClickModules}/>
       </Route>
+
 
       <Route path="/Exercices id=:id">
       <Exercices getIdModules={getIdModules} getCoursesIdModules={getCoursesIdModules} getPositionModules={getPositionModules} getExpModules={getExpModules}/>
       </Route>
+      
 
       <Route exact path="/Success">
       <Success />
@@ -69,6 +71,7 @@ function App() {
 </Switch>
 <Footer />
     </div>
+    
     </Router>
   );
 }

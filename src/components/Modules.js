@@ -1,4 +1,5 @@
 import {MyContext} from '../contexts/MyContext';
+import ThemeContext from '../contexts/ModulesContext.jsx';
 import React,{useState,useEffect, useContext} from 'react';
 import Axios from 'axios';
 import { Link } from "react-router-dom";
@@ -10,9 +11,11 @@ function Modules({ getId, handleClickModules }){
 
 
   const {rootState} = useContext(MyContext);
+// const { toggleTheme } = useContext(ThemeContext);
   const {isAuth,theUser} = rootState;
 
   let { id } = useParams();
+
 
 
 
