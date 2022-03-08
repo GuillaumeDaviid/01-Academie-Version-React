@@ -1,14 +1,16 @@
 import '../styles/Exercices.scss';
 import React, {useContext,useEffect,useState} from 'react'
 import {MyContext} from '../contexts/MyContext'
+import { ModulesContext } from '../contexts/ModulesContext.jsx'
 import Axios from 'axios'
 import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 
 
-function Exercices ({getIdModules, getCoursesIdModules, getPositionModules, getExpModules}){
+function Exercices (){
 
   const {rootState,updateModules} = useContext(MyContext);
+  const {getIdModules, getCoursesIdModules, getPositionModules, getExpModules} = useContext(ModulesContext)
   const {theUser} = rootState;
 
   let { id } = useParams();

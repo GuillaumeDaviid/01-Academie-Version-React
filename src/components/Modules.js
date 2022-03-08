@@ -1,5 +1,5 @@
 import {MyContext} from '../contexts/MyContext';
-import ThemeContext from '../contexts/ModulesContext.jsx';
+import { ModulesContext } from '../contexts/ModulesContext.jsx';
 import React,{useState,useEffect, useContext} from 'react';
 import Axios from 'axios';
 import { Link } from "react-router-dom";
@@ -7,16 +7,14 @@ import { useParams } from 'react-router-dom';
 import '../styles/Modules.scss';
 
 
-function Modules({ getId, handleClickModules }){
+function Modules({ getId }){
 
 
   const {rootState} = useContext(MyContext);
-// const { toggleTheme } = useContext(ThemeContext);
+ const { handleClickModules } = useContext(ModulesContext);
   const {isAuth,theUser} = rootState;
 
   let { id } = useParams();
-
-
 
 
   const [getModules,setGetModules] = useState([]);
