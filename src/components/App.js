@@ -39,24 +39,23 @@ function App() {
       <Modules getId={getId} />
       </Route>
       
-
-
       <Route path="/Exercices id=:id">
       <Exercices />
       </Route>
-      </ModulesProvider>
+      
 
       <Route exact path="/Success">
       <Success />
       </Route>
 
       <Route exact path='/Profil'>
-        <Profil getId={getId} handleClick={handleClick}/>
-        </Route>
+      <Profil getId={getId} handleClick={handleClick}/>
+      </Route>
 
-        <Route exact path='/Parameters'>
-          <Parameters/>
-          </Route>
+      <Route exact path='/Parameters'>
+      <Parameters/>
+      </Route>
+      </ModulesProvider>
 
 
 </Switch>
