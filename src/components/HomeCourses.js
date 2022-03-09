@@ -1,12 +1,14 @@
 import '../styles/HomeCourses.scss';
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, useContext} from 'react';
 import Axios from 'axios'
 import { Link } from "react-router-dom";
+import { ModulesContext } from '../contexts/ModulesContext.jsx';
 
 
-function HomeCourses({ getId, handleClick }){
+function HomeCourses({  }){
 
   const [getList,setGetList] = useState([]);
+  const { handleClick } = useContext(ModulesContext)
 
 
   useEffect(()=>{

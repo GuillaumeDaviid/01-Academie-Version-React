@@ -7,11 +7,11 @@ import { useParams } from 'react-router-dom';
 import '../styles/Modules.scss';
 
 
-function Modules({ getId }){
+function Modules({ }){
 
 
   const {rootState} = useContext(MyContext);
- const { handleClickModules } = useContext(ModulesContext);
+ const { handleClickModules, getId } = useContext(ModulesContext);
   const {isAuth,theUser} = rootState;
 
   let { id } = useParams();

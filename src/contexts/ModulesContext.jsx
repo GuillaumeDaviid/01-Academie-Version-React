@@ -15,9 +15,15 @@ export const ModulesProvider = ({ children }) => {
     setGetExpModules(exp)
   }, [])
 
+  const [getId, setGetId] = useState("");
+
+  const handleClick = useCallback((id) => {
+    setGetId(id)
+  },[])
+
 
   return (
-    <ModulesContext.Provider value={{ handleClickModules, getIdModules, getCoursesIdModules, getPositionModules, getExpModules }} >
+    <ModulesContext.Provider value={{ handleClickModules, getIdModules, getCoursesIdModules, getPositionModules, getExpModules, getId, handleClick }} >
       {children}
     </ModulesContext.Provider>
   )

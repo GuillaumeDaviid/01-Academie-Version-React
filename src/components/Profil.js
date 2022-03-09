@@ -4,12 +4,14 @@ import React,{useState,useEffect, useContext} from 'react'
 import HomeCourses from './HomeCourses.js'
 import { Link } from "react-router-dom";
 import Axios from 'axios'
+import { ModulesContext } from '../contexts/ModulesContext.jsx';
 
 
-function Profil({ getId, handleClick }) {
+function Profil({  }) {
 
   const {rootState} = useContext(MyContext);
   const {isAuth,theUser,showLogin} = rootState;
+  const { handleClick } = useContext(ModulesContext)
 
   const [getSuccess, setGetSuccess] = useState([]);
 
