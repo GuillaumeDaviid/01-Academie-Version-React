@@ -1,10 +1,10 @@
 import '../styles/Exercices.scss';
-import React, {useContext,useEffect,useState} from 'react'
+import React, {useContext,useState} from 'react'
 import {MyContext} from '../contexts/MyContext'
 import { ModulesContext } from '../contexts/ModulesContext.jsx'
-import Axios from 'axios'
 import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
+import {useFetch} from '../hooks/useFetch';
 
 
 function Exercices (){
@@ -32,15 +32,10 @@ function Exercices (){
 
   let [heart, setHeart] = useState(3);
 
-  const [getExe, setGetExe] = useState([]);
-
   let [position, setPosition] = useState(1);
 
-  useEffect(()=>{
-Axios.get("http://localhost/01-academie/src/server/ex_req_ajax.php").then((data)=>{
-    setGetExe(data.data)
-});
-},[])
+
+const { dt } = useFetch("http://localhost/01-academie/src/server/ex_req_ajax.php")
 
 // Show Message on Success or Error
 let successMsg = '';
@@ -58,9 +53,9 @@ const clickNext = () => {
   console.log(heart)
 }
 
-const handleQuestions = async (getExe, answer) =>{
+const handleQuestions = async (dt, answer) =>{
   setPosition(position+1)
-  if (getExe.position == 20){
+  if (dt.position == 20){
 
     state.userInfo.currentEmail = theUser.email;
     state.userInfo.currentModules = theUser.modules_completed;
@@ -90,22 +85,21 @@ const handleQuestions = async (getExe, answer) =>{
         });
     }
   }
-  if (answer == getExe.good_answer){
+  if (answer == dt.good_answer){
   }
   else{
     setHeart(heart-1)
   }
 }
-console.log(id)
 
-const listQuestions = getExe.map((getExe) =>
+const listQuestions = dt.map((dt) =>
 <div>
-{getExe.modules_id == id ? getExe.position == position ? <div>
-<h1 key={getExe.id} className="questions">{getExe.questions}</h1>
+{dt.modules_id == id ? dt.position == position ? <div>
+<h1 key={dt.id} className="questions">{dt.questions}</h1>
 <div className="content_btn">
-<button className="btn_ques" onClick={() => handleQuestions(getExe, getExe.answer_one)}>{getExe.answer_one}</button>
-<button id="deux" className="btn_ques" onClick={() => handleQuestions(getExe, getExe.answer_two)}>{getExe.answer_two}</button>
-<button className="btn_ques" onClick={() => handleQuestions(getExe, getExe.answer_three)}>{getExe.answer_three}</button>
+<button className="btn_ques" onClick={() => handleQuestions(dt, dt.answer_one)}>{dt.answer_one}</button>
+<button id="deux" className="btn_ques" onClick={() => handleQuestions(dt, dt.answer_two)}>{dt.answer_two}</button>
+<button className="btn_ques" onClick={() => handleQuestions(dt, dt.answer_three)}>{dt.answer_three}</button>
 </div>
 <p className="msg">Bienvenue</p>
 <div className="content_sup">
