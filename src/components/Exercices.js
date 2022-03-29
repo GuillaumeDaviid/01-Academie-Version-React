@@ -2,9 +2,9 @@ import '../styles/Exercices.scss';
 import React, {useContext,useEffect,useState} from 'react'
 import {MyContext} from '../contexts/MyContext'
 import { ModulesContext } from '../contexts/ModulesContext.jsx'
-import Axios from 'axios'
 import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
+import {useFetch} from '../hooks/useFetch';
 
 
 function Exercices (){
@@ -32,15 +32,10 @@ function Exercices (){
 
   let [heart, setHeart] = useState(3);
 
-  const [getExe, setGetExe] = useState([]);
-
   let [position, setPosition] = useState(1);
 
-  useEffect(()=>{
-Axios.get("http://localhost/01-academie/src/server/ex_req_ajax.php").then((data)=>{
-    setGetExe(data.data)
-});
-},[])
+
+const { getExe } = useFetch("http://localhost/01-academie/src/server/ex_req_ajax.php")
 
 // Show Message on Success or Error
 let successMsg = '';
