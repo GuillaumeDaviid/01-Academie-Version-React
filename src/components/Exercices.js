@@ -1,5 +1,5 @@
 import '../styles/Exercices.scss';
-import React, {useContext,useEffect,useState} from 'react'
+import React, {useContext,useState} from 'react'
 import {MyContext} from '../contexts/MyContext'
 import { ModulesContext } from '../contexts/ModulesContext.jsx'
 import { Link } from "react-router-dom";

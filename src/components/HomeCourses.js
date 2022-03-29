@@ -1,6 +1,5 @@
 import '../styles/HomeCourses.scss';
-import React,{useState,useEffect, useContext} from 'react';
-import Axios from 'axios'
+import React,{useContext} from 'react';
 import { Link } from "react-router-dom";
 import { ModulesContext } from '../contexts/ModulesContext.jsx';
 import {useFetch} from '../hooks/useFetch';
