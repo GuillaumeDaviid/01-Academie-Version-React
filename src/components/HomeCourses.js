@@ -3,24 +3,19 @@ import React,{useState,useEffect, useContext} from 'react';
 import Axios from 'axios'
 import { Link } from "react-router-dom";
 import { ModulesContext } from '../contexts/ModulesContext.jsx';
+import {useFetch} from '../hooks/useFetch';
 
 
 function HomeCourses({  }){
 
-  const [getList,setGetList] = useState([]);
   const { handleClick } = useContext(ModulesContext)
 
-
-  useEffect(()=>{
-Axios.get("http://localhost/01-academie/src/server/phpRequestCoursesInfo.php").then((data)=>{
-    setGetList(data.data)
-});
-},[])
+const { dt } = useFetch("http://localhost/01-academie/src/server/phpRequestCoursesInfo.php")
 
 
-const listCourses = getList.map((getList) =>
-  <div className="courses" onClick={() => handleClick(getList.id)}><Link to={"Modules id="+getList.id} className='link'>
-  <h2 key={getList.id}>{getList.name}</h2>
+const listCourses = dt.map((dt) =>
+  <div className="courses" onClick={() => handleClick(dt.id)}><Link to={"Modules id="+dt.id} className='link'>
+  <h2 key={dt.id}>{dt.name}</h2>
   </Link></div>
 );
 

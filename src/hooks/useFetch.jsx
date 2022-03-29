@@ -2,7 +2,7 @@ import {useEffect,useState} from 'react'
 
 export function useFetch(url) {
 
-    const [getExe, setData] = useState([]);
+    const [dt, setData] = useState([]);
     
     const [error, setError] = useState(false)
     
@@ -35,6 +35,6 @@ export function useFetch(url) {
     
         }, [url])
     
-        return { getExe }
+        return { dt }
     
 }
