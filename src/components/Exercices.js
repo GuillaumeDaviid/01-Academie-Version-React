@@ -104,7 +104,7 @@ const listQuestions = dt.map((dt) =>
 <p className="msg">Bienvenue</p>
 <div className="content_sup">
 <Link to={"Modules id="+getCoursesIdModules}><button id="cancel" className="btn_sup">Quitter</button></Link>
-<button id="next" className="btn_sup" onClick={() => clickNext()}>Suivant</button>
+<button id="next" className="btn_sup" data-testid="click-element" onClick={() => clickNext()}>Suivant</button>
 </div>
 </div>
 
@@ -121,9 +121,9 @@ const listQuestions = dt.map((dt) =>
     <div>
     <div class='ctn__head__exercices' id='ctn_heart'>
     {
-      (heart == 3) ? <div className="ctn__heart"><div className="heart" id="heart_one"></div><div className='heart' id='heart_two'></div> <div className="heart" id='heart_three'></div></div> :
-      (heart == 2) ? <div className="ctn__heart"><div className="heart" id="heart_one"></div><div className='heart' id='heart_two'></div></div> :
-      (heart == 1) ? <div className="ctn__heart"><div className="heart" id="heart_one"></div></div> : <div></div>
+      (heart == 3) ? <div className="ctn__heart"><div className="heart" id="heart_one" data-testid="heart-element"></div><div className='heart' id='heart_two' data-testid="heart-element"></div> <div className="heart" id='heart_three' data-testid="heart-element"></div></div> :
+      (heart == 2) ? <div className="ctn__heart"><div className="heart" id="heart_one" data-testid="heart-element"></div><div className='heart' id='heart_two' data-testid="heart-element"></div></div> :
+      (heart == 1) ? <div className="ctn__heart"><div className="heart" id="heart_one" data-testid="heart-element"></div></div> : <div></div>
     }
     </div>
 
