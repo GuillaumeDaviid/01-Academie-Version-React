@@ -104,7 +104,7 @@ const listQuestions = dt.map((dt) =>
 <p className="msg">Bienvenue</p>
 <div className="content_sup">
 <Link to={"Modules id="+getCoursesIdModules}><button id="cancel" className="btn_sup">Quitter</button></Link>
-<button id="next" className="btn_sup" data-testid="click-element" onClick={() => clickNext()}>Suivant</button>
+<div data-testid="click-element"><button id="next" className="btn_sup" onClick={() => clickNext()}>Suivant</button></div>
 </div>
 </div>
 
