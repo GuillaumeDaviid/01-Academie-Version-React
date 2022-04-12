@@ -8,17 +8,33 @@ import ReactRouter from 'react-router';
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 
+const exercices = [
+    {
+        id: 1,
+        questions: "le HTML est un langage de: ",
+        answer_one: "balisage",
+        answer_tow: "script",
+        answer_three: "communication",
+        good_answer: "balisage"
+    },
+    {
+        id: 2,
+        questions: "la balise <p> représente :",
+        answer_one: "un paragraphe",
+        answer_two: "un titre",
+        anwer_three: "une section",
+        good_answer: "un paragraphe"
+    }
+]
+
 const server = setupServer(
     rest.get('http://localhost/01-academie/src/server/ex_req_ajax.php', (req, res, ctx) => {
-      return res(ctx.json({ exoMock: exoMockData }))
+        return res(ctx.json({ exercicesList: exercices }))
     })
 )
- 
-// Active la simulation d'API avant les tests depuis server
+
 beforeAll(() => server.listen())
-// Réinitialise tout ce qu'on aurait pu ajouter en termes de durée pour nos tests avant chaque test
 afterEach(() => server.resetHandlers())
-// Ferme la simulation d'API une fois que les tests sont finis
 afterAll(() => server.close())
 
 
@@ -34,7 +50,7 @@ describe('Exercices', () => {
         )
     })
 
-    test('should show 3 hearts', async () => {
+    test('should have 3 hearts', async () => {
         jest.spyOn(ReactRouter, 'useParams').mockReturnValue({ id: '1' });
         render(
             <MyContextProvider>
@@ -45,6 +61,20 @@ describe('Exercices', () => {
         )
         const hearts = screen.getAllByTestId('heart-element')
         expect(hearts).toHaveLength(3);
+    })
+
+    test('should display questions', async () => {
+        jest.spyOn(ReactRouter, 'useParams').mockReturnValue({ id: '1' });
+        render(
+            <MyContextProvider>
+            <ModulesProvider>
+                <Exercices />
+            </ModulesProvider>
+            </MyContextProvider>
+        )
+        await waitFor(() => {
+            expect(screen.getByText('le HTML est un langage de: ')).toBeTruthy()
+        })
     })
     
 })
