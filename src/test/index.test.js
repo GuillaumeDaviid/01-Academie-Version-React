@@ -1,7 +1,7 @@
 import React, {} from 'react';
 import Exercices from "../components/Exercices";
 import '@testing-library/jest-dom/extend-expect'
-import { fireEvent, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, waitForElementToBeRemoved, act } from '@testing-library/react';
 import { ModulesProvider } from '../contexts/ModulesContext.jsx';
 import MyContextProvider from '../contexts/MyContext';
 import ReactRouter from 'react-router';
@@ -65,6 +65,7 @@ describe('Exercices', () => {
 
     test('should display questions', async () => {
         jest.spyOn(ReactRouter, 'useParams').mockReturnValue({ id: '1' });
+        jest.spyOn(React, 'useState').mockReturnValue({ heart: '3' });
         render(
             <MyContextProvider>
             <ModulesProvider>
@@ -72,9 +73,8 @@ describe('Exercices', () => {
             </ModulesProvider>
             </MyContextProvider>
         )
-        await waitFor(() => {
-            expect(screen.getByText('le HTML est un langage de: ')).toBeTruthy()
-        })
+        const btn = screen.getAllByTestId('click-element')
+        expect(btn).toHaveLength(1)
     })
     
 })
