@@ -8,30 +8,13 @@ import ReactRouter from 'react-router';
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 
-const exercices = [
-    {
-        id: 1,
-        questions: "le HTML est un langage de: ",
-        answer_one: "balisage",
-        answer_tow: "script",
-        answer_three: "communication",
-        good_answer: "balisage"
-    },
-    {
-        id: 2,
-        questions: "la balise <p> représente :",
-        answer_one: "un paragraphe",
-        answer_two: "un titre",
-        anwer_three: "une section",
-        good_answer: "un paragraphe"
-    }
-]
+const questionsResponse = rest.get("http://localhost/01-academie/src/server/ex_req_ajax.php", (req, res, ctx) => {
+    return(res(ctx.json([{id:1, questions:"le HTML est un langage de: ", answer_one:"balisage", anszwer_two:"script", answer_three:"communication entre humain", good_answer:"balisage" }])))
+})
 
-const server = setupServer(
-    rest.get('http://localhost/01-academie/src/server/ex_req_ajax.php', (req, res, ctx) => {
-        return res(ctx.json({ exercicesList: exercices }))
-    })
-)
+const handlers = [questionsResponse];
+
+const server = setupServer(...handlers)
 
 beforeAll(() => server.listen())
 afterEach(() => server.resetHandlers())
@@ -74,7 +57,8 @@ describe('Exercices', () => {
             </MyContextProvider>
         )
         const btn = screen.getAllByTestId('click-element')
-        expect(btn).toHaveLength(1)
+        const question = screen.findByText('balisage')
+        expect(question).toBeVisible();
     })
     
 })
