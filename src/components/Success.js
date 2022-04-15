@@ -14,7 +14,6 @@ function Success() {
 
   useEffect(()=>{
 Axios.get("http://localhost/01-academie/src/server/getSuccess.php").then((data)=>{
-    console.log(data.data)
     setGetSuccess(data.data)
 });
 },[])
@@ -23,7 +22,7 @@ Axios.get("http://localhost/01-academie/src/server/getSuccess.php").then((data)=
 const listSuccess = getSuccess.map((getSuccess) =>
 
   <div className="success__content">
-  {isAuth ? <div className="success__info">
+  {isAuth ? <div className="success__info" key={getSuccess.id}>
   <p style={(theUser.modules_completed >= 1 && getSuccess.id == 1 || theUser.modules_completed >= 10 && getSuccess.id == 2 || theUser.modules_completed >= 50 && getSuccess.id == 3 ||
   theUser.modules_completed >= 100 && getSuccess.id == 4 || theUser.last_module_html == 8 && getSuccess.id == 5 || theUser.last_module_css == 17 && getSuccess.id == 6 ||
 theUser.last_module_php == 10 && getSuccess.id == 7 || theUser.last_module_js == 12 && getSuccess.id == 8 || theUser.last_module_sql == 10 && getSuccess.id == 9 ||
@@ -33,7 +32,7 @@ theUser.last_module_py == 11 && getSuccess.id == 10)
   theUser.modules_completed >= 100 && getSuccess.id == 4 || theUser.last_module_html == 8 && getSuccess.id == 5 || theUser.last_module_css == 17 && getSuccess.id == 6 ||
 theUser.last_module_php == 10 && getSuccess.id == 7 || theUser.last_module_js == 12 && getSuccess.id == 8 || theUser.last_module_sql == 10 && getSuccess.id == 9 ||
 theUser.last_module_py == 11 && getSuccess.id == 10)
-    ? {color: "white"} : {color: "black"} }>{getSuccess.validation_condition}</p> </div> : <div className="success__info">
+    ? {color: "white"} : {color: "black"} }>{getSuccess.validation_condition}</p> </div> : <div className="success__info" key={getSuccess.id}>
     <p style={{color: 'black'}}>{getSuccess.name_success}</p>
     <p style={{color: 'black'}}>{getSuccess.validation_condition}</p> </div>}
   </div>
