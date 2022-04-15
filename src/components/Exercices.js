@@ -119,7 +119,7 @@ const listQuestions = dt.map((dt) =>
 
   return(
     <div>
-    <div class='ctn__head__exercices' id='ctn_heart'>
+    <div className='ctn__head__exercices' id='ctn_heart'>
     {
       (heart == 3) ? <div className="ctn__heart"><div className="heart" id="heart_one" data-testid="heart-element"></div><div className='heart' id='heart_two' data-testid="heart-element"></div> <div className="heart" id='heart_three' data-testid="heart-element"></div></div> :
       (heart == 2) ? <div className="ctn__heart"><div className="heart" id="heart_one" data-testid="heart-element"></div><div className='heart' id='heart_two' data-testid="heart-element"></div></div> :
