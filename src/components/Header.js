@@ -54,9 +54,9 @@ function Header() {
 <ul>
    <li className=''><a href="http://localhost:3000/"className="img_header">{theUser.pseudo}</a>
         <ul class="sous">
-            <li><Link to="Profil" class='a'>Profil</Link></li>
-            <li><Link to="Parameters" class='a'>Paramétres</Link></li>
-            <li><Link to='/'class='a' onClick={logOut}>Déconnexion</Link></li>
+            <li><Link to="Profil" className='a'>Profil</Link></li>
+            <li><Link to="Parameters" className='a'>Paramétres</Link></li>
+            <li><Link to='/'className='a' onClick={logOut}>Déconnexion</Link></li>
         </ul>
     </li>
 

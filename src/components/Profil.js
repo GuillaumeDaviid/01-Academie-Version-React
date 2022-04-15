@@ -64,21 +64,21 @@ const listCourses = getList.map((getList) =>
     <div>
     {(isAuth) ?
       <div className="cont__profil">
-      <div class="main__info">
+      <div className="main__info">
       Pseudo : {theUser.pseudo}
       <p>Exp : {theUser.experience}</p>
       <p>Module complété : {theUser.modules_completed}</p>
       <p>Inscris depuis le : {theUser.signup_date}</p>
       </div>
 
-      <div class="my__courses">
+      <div className="my__courses">
       <h1 className="">Vos cours</h1>
       {listCourses}
       </div>
 
-      <div class="profil__cont__success">
-      <div class="title__success">
-        <h2 class="">Nom</h2>
+      <div className="profil__cont__success">
+      <div className="title__success">
+        <h2 className="">Nom</h2>
         <h2>Description</h2>
         </div>
         {listSuccess}

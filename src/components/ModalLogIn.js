@@ -69,7 +69,7 @@ function ModalLogIn({ showModal, children }){
 
       <div className="modal__cont">
         <h2>Connexion</h2>
-        <form onSubmit={submitForm} noValidate class="form__logIn" /*onSubmit={handleSubmit}*/>
+        <form onSubmit={submitForm} noValidate className="form__logIn" /*onSubmit={handleSubmit}*/>
 
         <label>Email :
         <input name="email" type="email" required placeholder="Enter your email" value={state.userInfo.email} onChange={onChangeValue} />
