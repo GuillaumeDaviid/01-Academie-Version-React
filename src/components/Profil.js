@@ -31,9 +31,6 @@ Axios.get("http://localhost/01-academie/src/server/phpRequestCoursesInfo.php").t
 });
 },[])
 
-console.log(showLogin)
-console.log(isAuth)
-
 
 const listSuccess = getSuccess.map((getSuccess) =>
 <div>

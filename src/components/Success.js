@@ -14,7 +14,6 @@ function Success() {
 
   useEffect(()=>{
 Axios.get("http://localhost/01-academie/src/server/getSuccess.php").then((data)=>{
-    console.log(data.data)
     setGetSuccess(data.data)
 });
 },[])
