@@ -1,6 +1,6 @@
 # Informations 
 
-Axios, API REST, PHP, react-router-dom, SCSS
+Axios, API REST, PHP, react-router-dom, JEST, Testing library, msw, SCSS
 
 # Getting Started with Create React App
 
