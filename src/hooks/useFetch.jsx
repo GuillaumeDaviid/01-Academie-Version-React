@@ -3,6 +3,8 @@ import {useEffect,useState} from 'react'
 export function useFetch(url) {
 
     const [dt, setData] = useState([]);
+
+    const [isLoading, setLoading] = useState(true)
     
     const [error, setError] = useState(false)
     
@@ -11,6 +13,8 @@ export function useFetch(url) {
     useEffect(() => {
     
         if (!url) return
+
+        setLoading(true)
     
         async function fetchData() {
     
@@ -27,14 +31,18 @@ export function useFetch(url) {
         console.log(err)
     
         setError(true)
-    
         }
+        finally {
+
+            setLoading(false)
+        
+            }
         }
     
         fetchData()
     
         }, [url])
     
-        return { dt }
+        return { dt, error, isLoading }
     
 }

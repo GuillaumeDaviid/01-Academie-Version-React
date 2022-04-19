@@ -35,7 +35,7 @@ function Exercices (){
   let [position, setPosition] = useState(1);
 
 
-const { dt } = useFetch("http://localhost/01-academie/src/server/ex_req_ajax.php")
+const { dt, error, isLoading } = useFetch("http://localhost/01-academie/src/server/ex_req_ajax.php")
 
 // Show Message on Success or Error
 let successMsg = '';
@@ -119,16 +119,20 @@ const listQuestions = dt.map((dt) =>
 
   return(
     <div>
-    <div className='ctn__head__exercices' id='ctn_heart'>
+      {!isLoading ? <div className='ctn__head__exercices' id='ctn_heart'>
     {
       (heart == 3) ? <div className="ctn__heart"><div className="heart" id="heart_one" data-testid="heart-element"></div><div className='heart' id='heart_two' data-testid="heart-element"></div> <div className="heart" id='heart_three' data-testid="heart-element"></div></div> :
       (heart == 2) ? <div className="ctn__heart"><div className="heart" id="heart_one" data-testid="heart-element"></div><div className='heart' id='heart_two' data-testid="heart-element"></div></div> :
       (heart == 1) ? <div className="ctn__heart"><div className="heart" id="heart_one" data-testid="heart-element"></div></div> : <div></div>
     }
-    </div>
-
+    </div> : <div></div>}
+    
 
     <section className="tpl">
+
+      {error === true ? <div>Une erreur est survenue, veuillez réessayer</div> : <div></div>}
+
+      {isLoading ? <div className='loading'></div> : <div></div>}
 
     {(heart >= 0) ? listQuestions : <div>
       <h2>Terminé</h2>
