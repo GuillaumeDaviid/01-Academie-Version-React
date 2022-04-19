@@ -35,7 +35,7 @@ function Exercices (){
   let [position, setPosition] = useState(1);
 
 
-const { dt, error } = useFetch("http://localhost/01-academie/src/server/ex_req_ajax.php")
+const { dt, error, isLoading } = useFetch("http://localhost/01-academie/src/server/ex_req_ajax.php")
 
 // Show Message on Success or Error
 let successMsg = '';
@@ -131,6 +131,8 @@ const listQuestions = dt.map((dt) =>
     <section className="tpl">
 
       {error === true ? <div>Une erreur est survenue, veuillez réessayer</div> : <div></div>}
+
+      {isLoading ? <div>chargement ...</div> : <div></div>}
 
     {(heart >= 0) ? listQuestions : <div>
       <h2>Terminé</h2>
