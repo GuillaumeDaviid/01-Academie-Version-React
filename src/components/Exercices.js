@@ -132,7 +132,7 @@ const listQuestions = dt.map((dt) =>
 
       {error === true ? <div>Une erreur est survenue, veuillez réessayer</div> : <div></div>}
 
-      {isLoading ? <div>chargement ...</div> : <div></div>}
+      {isLoading ? <div className='loading'></div> : <div></div>}
 
     {(heart >= 0) ? listQuestions : <div>
       <h2>Terminé</h2>
