@@ -35,6 +35,6 @@ export function useFetch(url) {
     
         }, [url])
     
-        return { dt }
+        return { dt, error }
     
 }
