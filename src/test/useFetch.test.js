@@ -43,6 +43,8 @@ describe('useFetch', () => {
         // Assert
         expect(result.current).toStrictEqual({
           dt: stubbedQuestions,
+          error: false,
+          isLoading: false
         });
       });
 })
