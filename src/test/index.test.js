@@ -33,6 +33,20 @@ describe('Exercices', () => {
         )
     })
 
+    test('should display loading', async () => {
+        jest.spyOn(ReactRouter, 'useParams').mockReturnValue({ id: '1' });
+        render(
+            <MyContextProvider>
+            <ModulesProvider>
+                <Exercices />
+            </ModulesProvider>
+            </MyContextProvider>
+        )
+
+        const loading = screen.getByTestId('loading')
+        expect(loading).toBeTruthy();
+    })
+
     test('should have 3 hearts', async () => {
         jest.spyOn(ReactRouter, 'useParams').mockReturnValue({ id: '1' });
         render(
