@@ -1,8 +1,6 @@
 import React, {} from 'react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import {useFetch} from '../hooks/useFetch';
-import { rest } from 'msw'
-import { setupServer } from 'msw/node'
 import fetchMock from "fetch-mock";
 import "whatwg-fetch";
 
@@ -76,7 +74,6 @@ describe('useFetch', () => {
           useFetch(stubbedQuestions, { current: false }, [])
         );
 
-        //expect(global.fetch).not.toHaveBeenCalled();
         expect(result.current).toStrictEqual({
           dt: [],
           error: false,
