@@ -47,4 +47,26 @@ describe('useFetch', () => {
           isLoading: false
         });
       });
+
+      test("should return an error", async () => {
+        // Mock API
+        jest.spyOn(global, "fetch").mockImplementation(() =>
+          Promise.resolve({
+            json: () => Promise.reject(stubbedQuestions),
+          })
+        );
+    
+        // Execute
+        const { result, waitForNextUpdate } = renderHook(() =>
+          useFetch(questionsUrl, { current: true }, [])
+        );
+        await waitForNextUpdate();
+    
+        // Assert
+        expect(result.current).toStrictEqual({
+          dt: [],
+          error: true,
+          isLoading: false
+        });
+      });
 })
