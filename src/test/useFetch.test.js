@@ -69,4 +69,18 @@ describe('useFetch', () => {
           isLoading: false
         });
       });
+
+      test("should return isLoading true", async () => {
+        // Execute
+        const { result } = renderHook(() =>
+          useFetch(stubbedQuestions, { current: false }, [])
+        );
+
+        //expect(global.fetch).not.toHaveBeenCalled();
+        expect(result.current).toStrictEqual({
+          dt: [],
+          error: false,
+          isLoading: true
+        });
+      });
 })
