@@ -39,4 +39,16 @@ describe('Header', () => {
         const success = screen.getByTestId('success')
         expect(success).toBeTruthy();
     })
+
+    test('Should have cours link', async () => {
+        render(
+            <Router>
+            <MyContextProvider>
+                <Header />
+            </MyContextProvider>
+            </Router>
+        )
+        const cours = screen.getByTestId('cours')
+        expect(cours).toBeTruthy();
+    })
 })
