@@ -63,4 +63,16 @@ describe('Header', () => {
         const logIn = screen.getByTestId('logIn')
         expect(logIn).toBeTruthy();
     })
+
+    test('Should have a sign up button', async () => {
+        render(
+            <Router>
+            <MyContextProvider>
+                <Header />
+            </MyContextProvider>
+            </Router>
+        )
+        const signUp = screen.getByTestId('signUp')
+        expect(signUp).toBeTruthy();
+    })
 })
