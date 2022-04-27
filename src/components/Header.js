@@ -44,7 +44,7 @@ function Header() {
 </div>
 
 <div className='pages'>
-<Link to="Success" className='page_suc' href='success.php'>SUCCES</Link>
+<Link to="Success" className='page_suc' href='success.php' data-testid="success">SUCCES</Link>
 <p className='border'></p>
 <Link to="/" className='page_cou' href='courses.php'>COURS</Link>
 </div>

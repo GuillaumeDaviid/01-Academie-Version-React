@@ -27,4 +27,16 @@ describe('Header', () => {
         const logo = screen.getByTestId('logo')
         expect(logo).toBeTruthy();
     })
+
+    test('Should have success link', async () => {
+        render(
+            <Router>
+            <MyContextProvider>
+                <Header />
+            </MyContextProvider>
+            </Router>
+        )
+        const success = screen.getByTestId('success')
+        expect(success).toBeTruthy();
+    })
 })
