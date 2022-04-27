@@ -15,4 +15,16 @@ describe('Header', () => {
             </Router>
         )
     })
+
+    test('Should have a logo', async () => {
+        render(
+            <Router>
+            <MyContextProvider>
+                <Header />
+            </MyContextProvider>
+            </Router>
+        )
+        const logo = screen.getByTestId('logo')
+        expect(logo).toBeTruthy();
+    })
 })

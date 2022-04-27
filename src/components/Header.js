@@ -40,7 +40,7 @@ function Header() {
     <header>
     <div id="content">
 <div className="lg">
-    <Link to="/" className="logo"><img src={logo} alt="logo"/></Link>
+    <Link to="/" className="logo"><img src={logo} alt="logo" data-testid="logo"/></Link>
 </div>
 
 <div className='pages'>
