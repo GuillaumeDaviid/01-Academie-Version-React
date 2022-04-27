@@ -40,13 +40,13 @@ function Header() {
     <header>
     <div id="content">
 <div className="lg">
-    <Link to="/" className="logo"><img src={logo} alt="logo"/></Link>
+    <Link to="/" className="logo"><img src={logo} alt="logo" data-testid="logo"/></Link>
 </div>
 
 <div className='pages'>
-<Link to="Success" className='page_suc' href='success.php'>SUCCES</Link>
+<Link to="Success" className='page_suc' href='success.php' data-testid="success">SUCCES</Link>
 <p className='border'></p>
-<Link to="/" className='page_cou' href='courses.php'>COURS</Link>
+<Link to="/" className='page_cou' href='courses.php' data-testid="cours">COURS</Link>
 </div>
 
 
@@ -62,8 +62,8 @@ function Header() {
 
     </ul>
 </nav></div> : <div className = "btn">
-    <Link to="/" className ="btn__login" href="login.php" onClick={() => popLogIn()}>Connexion</Link>
-    <Link to="/" className ="btn__signUp" href="signup.php" onClick={() => popSignUp()}>S'inscrire</Link>
+    <Link to="/" className ="btn__login" href="login.php" onClick={() => popLogIn()} data-testid="logIn">Connexion</Link>
+    <Link to="/" className ="btn__signUp" href="signup.php" onClick={() => popSignUp()} data-testid="signUp">S'inscrire</Link>
   </div>
 }
 
