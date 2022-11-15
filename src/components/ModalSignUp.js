@@ -62,7 +62,7 @@ function ModalSignUp({ showModal, children }){
     <div className="modal__back">
 
       <div className="modal__cont">
-        <h2>Inscription</h2>
+        <h2 className='modal__title'>Inscription</h2>
         <form onSubmit={submitForm} noValidate>
                 <div className="form-control">
                     <label>Pseudo</label>
@@ -79,7 +79,7 @@ function ModalSignUp({ showModal, children }){
                 {errorMsg}
                 {successMsg}
                 <div className="form-control">
-                    <button type="submit">Sign Up</button>
+                    <button type="submit" className='modal__btn'>Sign Up</button>
                 </div>
             </form>
 

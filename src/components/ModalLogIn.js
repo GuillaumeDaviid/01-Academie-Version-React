@@ -68,21 +68,21 @@ function ModalLogIn({ showModal, children }){
     <div className="modal__back">
 
       <div className="modal__cont">
-        <h2>Connexion</h2>
+        <h2 className='modal__title'>Connexion</h2>
         <form onSubmit={submitForm} noValidate className="form__logIn" /*onSubmit={handleSubmit}*/>
 
         <label>Email :
         <input name="email" type="email" required placeholder="Enter your email" value={state.userInfo.email} onChange={onChangeValue} />
         </label>
 
-        <label>Mot de Passe :
+        <label>Password :
          <input name="password" type="password" required placeholder="Enter your password" value={state.userInfo.password} onChange={onChangeValue} />
         </label>
 
         {errorMsg}
         {successMsg}
 
-        <button type="submit">Connexion</button>
+        <button type="submit" className='modal__btn'>Connexion</button>
 
         </form>
 
