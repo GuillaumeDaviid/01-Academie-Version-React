@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className="">
     <footer>
-      <p>© 2021 01 Academie - <a className="link_form" href="formulaireContact.php">rapport de bug</a> - <a href="apropos.php">à propos</a></p>
+      <p>© 2023 01 Academie - By Guillaume David</p>
     </footer>
     </div>
   );

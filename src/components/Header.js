@@ -75,19 +75,19 @@ function Header() {
     </header>
     <ModalLogIn  showModal={openModal}>
     <div>
-       <button onClick={() => setOpenModal(false)}>Fermer</button>
+       <button className='modal__btn' onClick={() => setOpenModal(false)}>Fermer</button>
     </div>
-    <div>
-    Pas encore de compte ? <button onClick={() => popModal(false, true)}>S'incrire</button>
+    <div className='modal__info'>
+    Pas encore de compte ? <button className='modal__btn' onClick={() => popModal(false, true)}>S'incrire</button>
     </div>
     </ModalLogIn>
 
     <ModalSignUp  showModal={openModalSign}>
     <div>
-       <button onClick={() => setOpenModalSign(false)}>Fermer</button>
+       <button className='modal__btn' onClick={() => setOpenModalSign(false)}>Fermer</button>
     </div>
-    <div>
-    Deja inscrit ? <button onClick={() => popModal(true, false)}>Se Connecter</button>
+    <div className='modal__info'>
+    Deja inscrit ? <button className='modal__btn' onClick={() => popModal(true, false)}>Se Connecter</button>
     </div>
     </ModalSignUp>
 

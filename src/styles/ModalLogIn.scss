@@ -14,8 +14,40 @@
 }
 
 .modal__cont{
-  width: 200px;
+  width: 300px;
   height: 200px;
   background-color: $background-color-modal;
   opacity: 1;
+}
+
+.modal {
+  &__btn {
+    text-decoration: none;
+    background-color: #212121;
+    padding: 10px 30px;
+    color: white;
+    margin-right: 20px;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    border: 1px white solid;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+    transition: color .15s ease-in-out;
+    transition: background-color .15s ease-in-out;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__info {
+    margin-top: 10px;
+  }
 }
