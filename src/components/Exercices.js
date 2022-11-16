@@ -35,7 +35,7 @@ function Exercices (){
   let [position, setPosition] = useState(1);
 
 
-const { dt, error, isLoading } = useFetch("http://localhost/01-academie/src/server/ex_req_ajax.php")
+const { dt, error, isLoading } = useFetch("https://guillaumedavid.com/server/ex_req_ajax.php")
 
 // Show Message on Success or Error
 let successMsg = '';

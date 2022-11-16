@@ -9,7 +9,7 @@ function HomeCourses({  }){
 
   const { handleClick } = useContext(ModulesContext)
 
-const { dt } = useFetch("http://localhost/01-academie/src/server/phpRequestCoursesInfo.php")
+const { dt } = useFetch("https://guillaumedavid.com/server/phpRequestCoursesInfo.php")
 
 
 const listCourses = dt.map((dt) =>

@@ -17,7 +17,7 @@ function Modules({ }){
   let { id } = useParams();
 
 
-const { dt } = useFetch("http://localhost/01-academie/src/server/modules.php")
+const { dt } = useFetch("https://guillaumedavid.com/server/modules.php")
 
 
 
