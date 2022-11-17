@@ -55,11 +55,11 @@ theUser.last_module_py == dt.position && dt.courses_id == 6) ? {color: "white"} 
 const listModules = dt.map((dt) =>
 <div className="bloc__modules">
 {dt.courses_id === id &&
-    (<div key={dt.id} className="bloc">
-      <Link to={`Exercices id=`+dt.id}>
+    (<Link to={`Exercices id=`+dt.id}>
+    <div key={dt.id} className="bloc">
       <h2>{dt.name_modules}</h2>
-      </Link>
-    </div>)
+    </div>
+    </Link>)
 }
 </div>
 );

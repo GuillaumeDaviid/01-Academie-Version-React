@@ -50,7 +50,6 @@ if(state.successMsg){
 const clickNext = () => {
   setPosition(position+1)
   setHeart(heart-1)
-  console.log(heart)
 }
 
 const handleQuestions = async (dt, answer) =>{
