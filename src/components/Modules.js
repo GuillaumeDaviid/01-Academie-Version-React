@@ -20,7 +20,7 @@ function Modules({ }){
 const { dt } = useFetch("https://guillaumedavid.com/server/modules.php")
 
 
-
+/* Impossible de récupérer les infos du back end, solution temporaire ci-dessous
 const listModules = dt.map((dt) =>
 <div className="bloc__modules">
 {(isAuth) ? dt.courses_id === id ?
@@ -48,6 +48,18 @@ theUser.last_module_py == dt.position && dt.courses_id == 6) ? {color: "white"} 
 
   :('')
   : dt.courses_id == getId ? (<div className="bloc" style={{borderColor: 'black'}}><h2 key={dt.id} style={{color: 'black'}}>{dt.name_modules}</h2></div>) : ''
+}
+</div>
+);*/
+
+const listModules = dt.map((dt) =>
+<div className="bloc__modules">
+{dt.courses_id === id &&
+    (<div key={dt.id} className="bloc">
+      <Link to={`Exercices id=`+dt.id}>
+      <h2>{dt.name_modules}</h2>
+      </Link>
+    </div>)
 }
 </div>
 );
