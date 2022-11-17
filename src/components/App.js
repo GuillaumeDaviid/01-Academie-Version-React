@@ -9,10 +9,14 @@ import { ModulesProvider } from '../contexts/ModulesContext.jsx';
 import Profil from './Profil.js'
 import Parameters from './Parameters.js'
 import '../styles/App.scss';
-import React,{useState, useCallback} from 'react'
+import React,{useState, useCallback, useEffect} from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
+
+  useEffect(() => {
+    document.title = '01 Academie';
+  }, []);
 
   return (
     <Router>

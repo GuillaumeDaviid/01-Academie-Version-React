@@ -35,7 +35,7 @@ function Exercices (){
   let [position, setPosition] = useState(1);
 
 
-const { dt, error, isLoading } = useFetch("http://localhost/01-academie/src/server/ex_req_ajax.php")
+const { dt, error, isLoading } = useFetch("https://guillaumedavid.com/server/ex_req_ajax.php")
 
 // Show Message on Success or Error
 let successMsg = '';
@@ -50,7 +50,6 @@ if(state.successMsg){
 const clickNext = () => {
   setPosition(position+1)
   setHeart(heart-1)
-  console.log(heart)
 }
 
 const handleQuestions = async (dt, answer) =>{
@@ -67,8 +66,6 @@ const handleQuestions = async (dt, answer) =>{
     if(getCoursesIdModules == 2){
       state.userInfo.currentPosition = theUser.last_module_css;
     }
-
-    console.log("fini");
 
     const data = await updateModules(state.userInfo);
     if(data.success){
@@ -94,7 +91,7 @@ const handleQuestions = async (dt, answer) =>{
 
 const listQuestions = dt.map((dt) =>
 <div>
-{dt.modules_id == id ? dt.position == position ? <div>
+{dt.modules_id == id ? dt.position == position && <div>
 <h1 key={dt.id} className="questions">{dt.questions}</h1>
 <div className="content_btn">
 <button className="btn_ques" onClick={() => handleQuestions(dt, dt.answer_one)}>{dt.answer_one}</button>
@@ -103,7 +100,7 @@ const listQuestions = dt.map((dt) =>
 </div>
 <p className="msg">Bienvenue</p>
 <div className="content_sup">
-<Link to={"Modules id="+getCoursesIdModules}><button id="cancel" className="btn_sup">Quitter</button></Link>
+<Link to={"Modules id="+dt.courses}><button id="cancel" className="btn_sup">Quitter</button></Link>
 <div data-testid="click-element"><button id="next" className="btn_sup" onClick={() => clickNext()}>Suivant</button></div>
 </div>
 </div>
@@ -111,7 +108,6 @@ const listQuestions = dt.map((dt) =>
 
 : (<p></p>)
 
-: (<p></p>)
 }
 </div>
 );
@@ -137,14 +133,14 @@ const listQuestions = dt.map((dt) =>
     {(heart >= 0) ? listQuestions : <div>
       <h2>Terminé</h2>
       <h3>Veuillez réessayer une prochaine fois !</h3>
-      <Link to='Modules'><button className="btn_sup">Continuer</button></Link>
+      <Link to="/"><button className="btn_sup">Continuer</button></Link>
       </div>}
 
       {(position == 21) ? <div>
         <h2>Terminé</h2>
         <h3>Féliciations !</h3>
         {errorMsg}
-        <Link to='Modules'><button className="btn_sup">Continuer</button></Link>
+        <Link to="/"><button className="btn_sup">Continuer</button></Link>
         </div> : <div></div>}
 
 

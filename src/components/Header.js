@@ -50,7 +50,7 @@ function Header() {
 </div>
 
 
-{(isAuth) ? <div><nav>
+{/*(isAuth) ? <div><nav>
 <ul>
    <li className=''><a href="http://localhost:3000/"className="img_header">{theUser.pseudo}</a>
         <ul className="sous">
@@ -63,9 +63,9 @@ function Header() {
     </ul>
 </nav></div> : <div className = "btn">
     <Link to="/" className ="btn__login" href="login.php" onClick={() => popLogIn()} data-testid="logIn">Connexion</Link>
-    <Link to="/" className ="btn__signUp" href="signup.php" onClick={() => popSignUp()} data-testid="signUp">S'inscrire</Link>
+<Link to="/" className ="btn__signUp" href="signup.php" onClick={() => popSignUp()} data-testid="signUp">S'inscrire</Link> 
   </div>
-}
+  */}
 
 
 

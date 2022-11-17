@@ -19,14 +19,14 @@ function Profil({  }) {
 
 
   useEffect(()=>{
-Axios.get("http://localhost/01-academie/src/server/getSuccess.php").then((data)=>{
+Axios.get("https://guillaumedavid.com/server/getSuccess.php").then((data)=>{
     setGetSuccess(data.data)
 });
 },[])
 
 
 useEffect(()=>{
-Axios.get("http://localhost/01-academie/src/server/phpRequestCoursesInfo.php").then((dtCourses)=>{
+Axios.get("https://guillaumedavid.com/server/phpRequestCoursesInfo.php").then((dtCourses)=>{
   setGetList(dtCourses.data)
 });
 },[])
